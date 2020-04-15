@@ -1,17 +1,16 @@
 # Dockerfile for Easycwmp - TR069 client
 
-Automatically connect to GenieACS at networks name `genieacs`, standard port
+Automatically connect to `${acs}` standard port
 `7547`.
-
-Tested with the offical GenieACS docker: `drumsergio/genieacs`.
 
 
 ### Run the Docker image
+We build this base on upstream `gaimande/easycwmp` image and keep the `acs` hostname with `genieacs`, so please use `--add-host genieacs:${acs}` in the docker run command to indicate the `acs` IP
 
-Simply issue this command to start `Easycwmp`.
 
 ```bash
-docker run -it --net <acs-network-bridge> gaimande/easycwmp
+sudo docker run --rm --entrypoint="" --add-host genieacs:${acs} -it smarkm/easycwmp:1.5.2 easycwmpd -f -b
 ```
 
-You can check the <acs-networks-bridge> name from the `docker networks ls` command.
+### Change log
+- Only give the sample docker run command to connect any `acs`
