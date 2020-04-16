@@ -9,7 +9,7 @@ We build this base on upstream `gaimande/easycwmp` image and keep the `acs` host
 
 
 ```bash
-sudo docker run --rm --entrypoint="" --add-host genieacs:${acs} -it smarkm/easycwmp:1.5.2 easycwmpd -f -b
+sudo docker run --rm --entrypoint="" --add-host genieacs:${acs} -it smark/easycwmp:1.5.2 easycwmpd -f -b
 ```
 
 ### Change log
